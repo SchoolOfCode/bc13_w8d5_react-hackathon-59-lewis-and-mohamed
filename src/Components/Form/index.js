@@ -1,10 +1,9 @@
 import React from "react";
 
 export default function Form({ handleDay, handleMonth }) {
-
-  function temp(e) {
-    console.log(e.target.value)
-  }
+  //   function temp(e) {
+  //     console.log(e.target.value)
+  //   }
   return (
     <form className="form">
       <label htmlFor="day">Choose a day:</label>

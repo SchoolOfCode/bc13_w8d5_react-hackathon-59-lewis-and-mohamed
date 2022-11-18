@@ -1,24 +1,32 @@
 import "./App.css";
 import Form from "../Form";
 import Fact from "../Fact";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function App() {
   const [day, setDay] = useState(1);
   const [month, setMonth] = useState(1);
 
   function handleDay(e) {
-    console.log('changing day')
-    setDay(e.target.value)
+    setDay(e.target.value);
+    console.log("changing day", e.target.value);
   }
   function handleMonth(e) {
-    setMonth(e.target.value)
+    setMonth(e.target.value);
+    console.log("changing month", e.target.value);
   }
 
   return (
     <div className="App">
-      <Form day={day} month={month}/>
-      <Fact handleDay={(e)=>{handleDay(e)}} handleMonth={(e)=>{handleMonth(e)}}/>
+      <Form
+        handleDay={(e) => {
+          handleDay(e);
+        }}
+        handleMonth={(e) => {
+          handleMonth(e);
+        }}
+      />
+      <Fact day={day} month={month} />
     </div>
   );
 }
