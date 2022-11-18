@@ -1,26 +1,24 @@
 import "./App.css";
 import Form from "../Form";
+import Fact from "../Fact";
 import { useState, useEffect } from "react";
 
 function App() {
-  const [date, setDate] = useState({
-    day: 1,
-    month: 1,
-  });
-  useEffect(() => {
-    async function getDate() {
-      const response = await fetch(`http://numbersapi.com/1/1/date?json`);
-      console.log(response);
-      const data = await response.json();
-      console.log(data);
-      setDate(data);
-    }
-    getDate();
-  }, []);
+  const [day, setDay] = useState(1);
+  const [month, setMonth] = useState(1);
+
+  function handleDay(e) {
+    console.log('changing day')
+    setDay(e.target.value)
+  }
+  function handleMonth(e) {
+    setMonth(e.target.value)
+  }
 
   return (
     <div className="App">
-      <Form />
+      <Form day={day} month={month}/>
+      <Fact handleDay={(e)=>{handleDay(e)}} handleMonth={(e)=>{handleMonth(e)}}/>
     </div>
   );
 }
