@@ -1,0 +1,19 @@
+.facts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.current-fact {
+    width: 75%;
+    font-size: 32px;
+}
+
+.fact-history {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

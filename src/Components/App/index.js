@@ -18,6 +18,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>On This Day</h1>
       <Form
         handleDay={(e) => {
           handleDay(e);
