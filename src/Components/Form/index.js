@@ -1,62 +1,24 @@
 import React from "react";
 import './index.css'
+import 'react-calendar/dist/Calendar.css';
+import Calendar from 'react-calendar';
+import { useState } from "react";
 
 export default function Form({ handleDay, handleMonth }) {
-  //   function temp(e) {
-  //     console.log(e.target.value)
-  //   }
+  const [date, setDate] = useState(new Date());
+
+  function calendarUpdate() {
+    const day = date.getDate();
+    handleDay(day)
+    const month = date.getMonth() + 1;
+    handleMonth(month)
+  } 
+
+  calendarUpdate()
+  
   return (
-    <form className="form">
-      <label htmlFor="day">Choose a day:</label>
-      <select name="day" id="day" onChange={handleDay}>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-        <option value="13">13</option>
-        <option value="14">14</option>
-        <option value="15">15</option>
-        <option value="16">16</option>
-        <option value="17">17</option>
-        <option value="18">18</option>
-        <option value="19">19</option>
-        <option value="20">20</option>
-        <option value="21">21</option>
-        <option value="22">22</option>
-        <option value="23">23</option>
-        <option value="24">24</option>
-        <option value="25">25</option>
-        <option value="26">26</option>
-        <option value="27">27</option>
-        <option value="28">28</option>
-        <option value="29">29</option>
-        <option value="30">30</option>
-        <option value="31">31</option>
-      </select>
-      <br></br>
-      <label htmlFor="month">Choose a month!:</label>
-      <select name="month" id="month" onChange={handleMonth}>
-        <option value="1">January</option>
-        <option value="2">February</option>
-        <option value="3">March</option>
-        <option value="4">April</option>
-        <option value="5">May</option>
-        <option value="6">June</option>
-        <option value="7">July</option>
-        <option value="8">August</option>
-        <option value="9">September</option>
-        <option value="10">October</option>
-        <option value="11">November</option>
-        <option value="12">Decemeber</option>
-      </select>
-    </form>
+    <div class="calendar">
+      <Calendar inDetail="month" onChange={(event) => {setDate(event); calendarUpdate();}} value={date} />
+    </div>
   );
 }
