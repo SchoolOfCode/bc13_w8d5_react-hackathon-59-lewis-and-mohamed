@@ -5,7 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #d6ccc2;
+  background-image: url("./spencer-davis-ilQmlVIMN4c-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 code {
