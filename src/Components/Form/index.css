@@ -1,0 +1,10 @@
+.form {
+    display: flex;
+    width: 50%;
+    border: 1px solid black;
+}
+
+.calendar > div {
+    width: 800px;
+    background: #edede9;
+}
